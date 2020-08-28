@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.konfido.images-utils</string>
+	<key>connections</key>
+	<dict>
+		<key>0013EAF5-26BC-4DBB-A2CC-A1223B81B55F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>53B5EB17-6D33-4A91-AD8D-A181A7ACA9C9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>005907E4-F528-43A1-9A88-DEE7534959B7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>29250D2B-0704-4D7C-8964-4039EE435699</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>11FB28B6-1ED2-401D-A297-104BC3522C95</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>29250D2B-0704-4D7C-8964-4039EE435699</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8A056DDF-BEA5-415A-9245-E3260C6B7641</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>39637676-77DF-4712-AA73-07CB752A4A03</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0C92559A-95FE-4D6D-95F0-8C0FFF4313DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4FF41EB6-B95A-41E5-9A20-235790EDC104</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>551C40F9-63D4-4AA6-90A6-A1A7DCF32C83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA54667A-E1DA-40FF-A4B4-F6C97BE11426</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5B62B512-1946-4C25-A4C4-EF22B18A462B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>83D6833D-F243-477F-8E23-571A0EA5152D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4B9AF2B7-F9CE-4C76-ADE5-EC548E75CA94</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8A056DDF-BEA5-415A-9245-E3260C6B7641</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B62B512-1946-4C25-A4C4-EF22B18A462B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B66695FA-0605-488F-870A-9E90A282A232</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BC343CBC-F1E0-4BBF-862D-744FD1762BE7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4FF41EB6-B95A-41E5-9A20-235790EDC104</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E6DB2371-DA7C-4EB9-80F5-1772EFAE63C8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11FB28B6-1ED2-401D-A297-104BC3522C95</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Konfido</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Image Utils</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>key="{query}"
+
+#Storage directory for API key
+PREFS="$alfred_workflow_data"
+"$PREFS"&gt;2
+
+#Create storage folder
+mkdir -p "$PREFS"
+
+#Save user's key to storage file
+echo "$key"&gt;"$PREFS/api_key"
+
+#Notify
+echo "New API key applied:"$'\n'"$key"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5B62B512-1946-4C25-A4C4-EF22B18A462B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tinypng_config</string>
+				<key>subtext</key>
+				<string>Paste your new API key into Alfred</string>
+				<key>text</key>
+				<string>Enter/Change API key</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>005907E4-F528-43A1-9A88-DEE7534959B7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>import sys
+import json
+
+try:
+	query = sys.argv[1]
+except:
+	query = ""
+
+out = {"items":[
+	{
+		"title": "Enter/Change API key",
+		"subtitle": "Paste your new API key into Alfred",
+		"arg": query
+	}]}
+
+
+sys.stdout.write(json.dumps(out))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Paste your new API key into Alfred</string>
+				<key>title</key>
+				<string>Enter/Change API key</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8A056DDF-BEA5-415A-9245-E3260C6B7641</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open https://tinypng.com/developers</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4B9AF2B7-F9CE-4C76-ADE5-EC548E75CA94</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tinypng_getkey</string>
+				<key>subtext</key>
+				<string>Visit TinyPNG.com to get your own personal API key</string>
+				<key>text</key>
+				<string>Get new API key</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>83D6833D-F243-477F-8E23-571A0EA5152D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>29250D2B-0704-4D7C-8964-4039EE435699</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tinypng</string>
+				<key>subtext</key>
+				<string>Compress selected Finder items with online TinyPNG.com service</string>
+				<key>text</key>
+				<string>Compress with TinyPNG</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BC343CBC-F1E0-4BBF-862D-744FD1762BE7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>./tinypng_finder_selection.sh</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4FF41EB6-B95A-41E5-9A20-235790EDC104</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./tinypng.sh "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>11FB28B6-1ED2-401D-A297-104BC3522C95</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Compress with TinyPNG</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>E6DB2371-DA7C-4EB9-80F5-1772EFAE63C8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Image Utils</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Compress locally</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>B66695FA-0605-488F-870A-9E90A282A232</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import subprocess as sp
+import os
+import json
+import shutil
+
+my_env = os.environ.copy()
+my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
+# Note: The first argument is the script's path
+
+for arg in sys.argv[1:]:
+    fileType = (os.path.splitext(arg)[-1]).lower()
+    try:
+        if fileType == ".png":
+            my_command = ["pngquant", arg, "--quality", "70-95", "--ext=.png", "--force"]
+            sp.check_output(my_command, env=my_env)
+        elif fileType == ".jpg" or fileType == ".jpeg":
+            my_command = ["jpegoptim", "-m70", "--max90", arg]
+            sp.check_output(my_command, env=my_env)
+        elif fileType == ".gif":
+            my_command = ["gifsicle", "-i", arg, "--optimize=3", "-o", arg]
+            sp.check_output(my_command, env=my_env)
+    except Exception as e:
+        print(e)
+
+sys.stdout.write("All image compressed!")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Round Corner</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>39637676-77DF-4712-AA73-07CB752A4A03</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>PATH=$PATH:/usr/local/bin/;
+
+inputFilePath=/Users/apple/Desktop/haah.png
+outputFilePath=/Users/apple/Desktop/haah-2.png
+idx=0
+
+for f in "$@";do
+    full_name=${f%.*}
+    extension=${f##*.}
+    tempFile=${full_name}_temp.$extension
+    newFile=${full_name}_new.$extension
+    convert "$f" \
+        \( +clone  -alpha extract \
+            -draw 'fill black polygon 0,0 0,15 15,0 fill white circle 15,15 15,0' \
+            \( +clone -flip \) -compose Multiply -composite \
+            \( +clone -flop \) -compose Multiply -composite \
+        \) -alpha off -compose CopyOpacity -composite "$tempFile"
+    convert "$tempFile" \( +clone -background black -shadow 50x10+0+10 \) +swap -background none -layers merge +repage  "$newFile"
+    rm "$tempFile"
+    let idx=$idx+1
+done &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff"
+
+osascript -e "display notification \"$(echo 修改了 $idx 个文件)\""</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0C92559A-95FE-4D6D-95F0-8C0FFF4313DB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Resize</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>0013EAF5-26BC-4DBB-A2CC-A1223B81B55F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>PATH=$PATH:/usr/local/bin/
+
+read -r -d '' applescriptCode1 &lt;&lt;'EOF'
+    set imgWidth to text returned of (display dialog "请输入图片宽度" default answer "900")
+    return imgWidth
+EOF
+
+imgWidth=$(osascript -e "$applescriptCode1")
+
+
+if [ -z $imgWidth ]
+then
+    osascript -e 'display notification with title "未指定分辨率" sound name "Pop"'
+else
+    for ARG in "$@"; do
+        convert -resize $imgWidth "$ARG" "$ARG"
+    done &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>53B5EB17-6D33-4A91-AD8D-A181A7ACA9C9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Concact Horizontally</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>551C40F9-63D4-4AA6-90A6-A1A7DCF32C83</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>PATH=$PATH:/usr/local/bin/
+
+ARG="$1"
+ddate=`date +%Y-%m-%d-%H%M%S`
+ooutput="${ARG%/*}/concact-$ddate.png"
+
+#osascript -e "display notification \"$(echo $ooutput)\""
+#osascript -e "display notification \"$(echo $ARG)\""
+
+#convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff"
+convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DA54667A-E1DA-40FF-A4B4-F6C97BE11426</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0013EAF5-26BC-4DBB-A2CC-A1223B81B55F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>555</integer>
+		</dict>
+		<key>005907E4-F528-43A1-9A88-DEE7534959B7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>15</integer>
+		</dict>
+		<key>0C92559A-95FE-4D6D-95F0-8C0FFF4313DB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>450</integer>
+		</dict>
+		<key>11FB28B6-1ED2-401D-A297-104BC3522C95</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
+		<key>29250D2B-0704-4D7C-8964-4039EE435699</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>45</integer>
+		</dict>
+		<key>39637676-77DF-4712-AA73-07CB752A4A03</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>450</integer>
+		</dict>
+		<key>4B9AF2B7-F9CE-4C76-ADE5-EC548E75CA94</key>
+		<dict>
+			<key>xpos</key>
+			<integer>825</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>4FF41EB6-B95A-41E5-9A20-235790EDC104</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>53B5EB17-6D33-4A91-AD8D-A181A7ACA9C9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>555</integer>
+		</dict>
+		<key>551C40F9-63D4-4AA6-90A6-A1A7DCF32C83</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>660</integer>
+		</dict>
+		<key>5B62B512-1946-4C25-A4C4-EF22B18A462B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>15</integer>
+		</dict>
+		<key>83D6833D-F243-477F-8E23-571A0EA5152D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>625</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
+		<key>8A056DDF-BEA5-415A-9245-E3260C6B7641</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>15</integer>
+		</dict>
+		<key>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>330</integer>
+		</dict>
+		<key>B66695FA-0605-488F-870A-9E90A282A232</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>345</integer>
+		</dict>
+		<key>BC343CBC-F1E0-4BBF-862D-744FD1762BE7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+		<key>DA54667A-E1DA-40FF-A4B4-F6C97BE11426</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>660</integer>
+		</dict>
+		<key>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</key>
+		<dict>
+			<key>xpos</key>
+			<integer>405</integer>
+			<key>ypos</key>
+			<integer>345</integer>
+		</dict>
+		<key>E6DB2371-DA7C-4EB9-80F5-1772EFAE63C8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.2.0</string>
+	<key>webaddress</key>
+	<string>konfido.github.com</string>
+</dict>
+</plist>
