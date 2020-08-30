@@ -1,8 +1,14 @@
+#!/bin/bash
+# --------------------------------------
+# Created by carlosnz on 2015-10-06
+# Modified by Konfido
+# --------------------------------------
+
 #Put incoming into proper tab-delimited variable (for the Finder Selection string)
 array=$(echo -e "$1")
 
 #Storage directory for API key
-PREFS="$HOME/Library/Application Support/Alfred/Workflow Data/carlosnz.tinypng"
+PREFS="$alfred_workflow_data"
 
 #Enable aliases for this script
 shopt -s expand_aliases

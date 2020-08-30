@@ -522,19 +522,22 @@ import subprocess as sp
 import os
 import json
 import shutil
+import datetime
 
 my_env = os.environ.copy()
 my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
 # Note: The first argument is the script's path
+name = datetime.datetime.now().strftime(format="%Y%m%d%H%M%S%f")[:-3]
 
 for arg in sys.argv[1:]:
     fileType = (os.path.splitext(arg)[-1]).lower()
     try:
         if fileType == ".png":
-            my_command = ["pngquant", arg, "--quality", "70-95", "--ext=.png", "--force"]
+            my_command = ["pngquant", arg, "--quality", "70-95",
+                          "--ext=.png", "--force"]
             sp.check_output(my_command, env=my_env)
         elif fileType == ".jpg" or fileType == ".jpeg":
-            my_command = ["jpegoptim", "-m70", "--max90", arg]
+            my_command = ["jpegoptim", "--max=90", arg]
             sp.check_output(my_command, env=my_env)
         elif fileType == ".gif":
             my_command = ["gifsicle", "-i", arg, "--optimize=3", "-o", arg]
@@ -546,9 +549,9 @@ sys.stdout.write("All image compressed!")</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>local_process.py</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>

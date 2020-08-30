@@ -1,3 +1,9 @@
+#!/bin/bash
+# --------------------------------------
+# Created by carlosnz on 2014-03-18
+# Modified by Konfido
+# --------------------------------------
+
 #Enable aliases for this script
 shopt -s expand_aliases
 
