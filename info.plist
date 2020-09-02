@@ -33,18 +33,7 @@
 			</dict>
 		</array>
 		<key>11FB28B6-1ED2-401D-A297-104BC3522C95</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>29250D2B-0704-4D7C-8964-4039EE435699</key>
 		<array>
 			<dict>
@@ -72,18 +61,7 @@
 			</dict>
 		</array>
 		<key>4FF41EB6-B95A-41E5-9A20-235790EDC104</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>551C40F9-63D4-4AA6-90A6-A1A7DCF32C83</key>
 		<array>
 			<dict>
@@ -98,6 +76,19 @@
 			</dict>
 		</array>
 		<key>5B62B512-1946-4C25-A4C4-EF22B18A462B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -238,27 +229,6 @@ echo "New API key applied:"$'\n'"$key"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>tinypng_config</string>
-				<key>subtext</key>
-				<string>Paste your new API key into Alfred</string>
-				<key>text</key>
-				<string>Enter/Change API key</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>005907E4-F528-43A1-9A88-DEE7534959B7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -318,6 +288,27 @@ sys.stdout.write(json.dumps(out))</string>
 			<string>8A056DDF-BEA5-415A-9245-E3260C6B7641</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tinypng_config</string>
+				<key>subtext</key>
+				<string>Paste your new API key into Alfred</string>
+				<key>text</key>
+				<string>Enter/Change API key</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>005907E4-F528-43A1-9A88-DEE7534959B7</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -411,39 +402,16 @@ sys.stdout.write(json.dumps(out))</string>
 				<key>script</key>
 				<string>./tinypng_finder_selection.sh</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
+				<string>tinypng_finder_selection.sh</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>4FF41EB6-B95A-41E5-9A20-235790EDC104</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>./tinypng.sh "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>11FB28B6-1ED2-401D-A297-104BC3522C95</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -470,44 +438,25 @@ sys.stdout.write(json.dumps(out))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>concurrently</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Image Utils</string>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./tinypng.sh "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+			<string>11FB28B6-1ED2-401D-A297-104BC3522C95</string>
 			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<true/>
-				<key>filetypes</key>
-				<array>
-					<string>com.compuserve.gif</string>
-					<string>public.jpeg</string>
-					<string>public.png</string>
-				</array>
-				<key>name</key>
-				<string>Image - Compress locally</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>B66695FA-0605-488F-870A-9E90A282A232</string>
-			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -559,6 +508,61 @@ sys.stdout.write("All image compressed!")</string>
 			<string>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Image Utils</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Compress locally</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>B66695FA-0605-488F-870A-9E90A282A232</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>notify</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -823,6 +827,13 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 			<key>ypos</key>
 			<integer>15</integer>
 		</dict>
+		<key>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</key>
+		<dict>
+			<key>xpos</key>
+			<integer>625</integer>
+			<key>ypos</key>
+			<integer>450</integer>
+		</dict>
 		<key>83D6833D-F243-477F-8E23-571A0EA5152D</key>
 		<dict>
 			<key>xpos</key>
@@ -840,9 +851,9 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>640</integer>
+			<integer>825</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>345</integer>
 		</dict>
 		<key>B66695FA-0605-488F-870A-9E90A282A232</key>
 		<dict>
@@ -881,7 +892,7 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>konfido.github.com</string>
 </dict>

@@ -12,9 +12,8 @@ PREFS="$alfred_workflow_data"
 
 #Enable aliases for this script
 shopt -s expand_aliases
-
-#define aliases
-alias growlnotify='/usr/local/bin/growlnotify TinyPNG --image icon.png -m '
+#Define aliases
+alias notify='osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow \"$alfred_workflow_bundleid\" with argument \"$message\""'
 
 #Get API key from storage file
 if [ ! -e "$PREFS/api_key" ]; then
@@ -43,9 +42,8 @@ newfilename=${newfilename/.jpg/_shrink.jpg}
 newfilename=${newfilename/.PNG/_shrink.PNG}
 newfilename=${newfilename/.JPG/_shrink.JPG}
 
-
-
-osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow \"carlosnz.tinypng\" with argument \"Processing $filename...\""
+message="Processing $filename..."
+notify
 echo "FILE: $file" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
 
 #Submit API query
@@ -72,7 +70,7 @@ if [[ $api_result = *'error'* ]]; then
 	echo "Upload FAILED" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
 	echo "Code: ${spliterror[0]}" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
 	echo "Message: ${spliterror[1]}" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
-	#growlnotify "Processing FAILED: $filename"$'\n'"See ~Report.txt for details."
+	notify "Processing FAILED: $filename"$'\n'"See ~Report.txt for details."
 	let fail++
 else
 	#If successful
@@ -82,14 +80,14 @@ else
 	curl -o "$HOME/Desktop/TinyPNG/$newfilename" "${splitdata[3]}"
 	if [ ! $? = 0 ]; then
 		echo "Problem downloading $newfilename" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
-		#growlnotify "Processing FAILED: $filename"$'\n'"See ~Report.txt for details."
+		notify "Processing FAILED: $filename"$'\n'"See ~Report.txt for details."
 		let fail++
 	else
 		#Output report
 		echo "Original size: ${splitdata[0]}" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
 		echo "Shrunk size: ${splitdata[1]}" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
 		echo "Ratio: ${splitdata[2]}" >> "$HOME/Desktop/TinyPNG/~Report~.txt"
-		#growlnotify "Processing completed successfully:"$'\n'" $filename"
+		notify "Processing completed successfully:"$'\n'" $filename"
 		let success++
 	fi
 fi
@@ -104,7 +102,8 @@ if [ ! $success = 0 ]; then
 	else
 		suc_files=files
 	fi
-	echo "$success $suc_files downloaded to /Desktop/TinyPNG. "
+	message="$success $suc_files downloaded to /Desktop/TinyPNG. "
+	notify
 fi
 
 if [ ! $fail = 0 ]; then
@@ -113,6 +112,9 @@ if [ ! $fail = 0 ]; then
 	else
 		fail_files=files
 	fi
-	echo "$fail $fail_files had problems."
+	message="$fail $fail_files had problems."
+	notify
 fi
-echo -n "See ~Report~.txt for details."
+
+message="See ~Report~.txt for details."
+notify
