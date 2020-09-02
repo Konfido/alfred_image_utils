@@ -8,10 +8,25 @@
 shopt -s expand_aliases
 
 #define aliases
-alias notify='osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow \"carlosnz.tinypng\" with argument \"$message\""'
+alias notify='osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow \"$alfred_workflow_name\" with argument \"$message\""'
 
 #Run automator workflow to get Finder selection
-selected=$(automator get_selection.workflow)
+# selected=$(automator get_selection.workflow)
+selected=$(osascript <<EOF
+tell application "Finder"
+	set finderSelList to selection as alias list
+end tell
+
+if finderSelList ≠ {} then
+	repeat with i in finderSelList
+		set contents of i to POSIX path of (contents of i)
+	end repeat
+
+	set text item delimiters of AppleScript to linefeed
+	finderSelList as text
+end if
+EOF
+)
 echo "$selected"
 
 if [ -z "$selected" ]; then
