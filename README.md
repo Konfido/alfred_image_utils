@@ -1,8 +1,11 @@
-# Image Utils Workflow
+# Alfred Workflow - Image Utils
 
-Alfred Workflow which can take a set of PNG/JPG/gif files and compress them by using some local utils or the online [TinyPNG](https://tinypng.com/) service. Please make sure you have made all  [dependencies](#Dependencies) installed.
+Using local CLIs or the [TinyPNG](https://tinypng.com/) service to process images (PNG/JPG/gif). 
 
-(Note: The free TinyPNG API has a monthly limit of 500 file processes per month.)
+Notes: 
+
+- The free TinyPNG API has a monthly limit of 500 file processes per month.
+- Please make sure you have made all  [dependencies](#Dependencies) installed.
 
 
 
@@ -10,29 +13,34 @@ Alfred Workflow which can take a set of PNG/JPG/gif files and compress them by u
 
 - Online processing
 
-    Your images will be uploaded to TinyPNG, and the processed files will be downloaded to a TinyPNG folder on your Desktop, along with a Report showing the success/failure of each file, and how much it has been compressed by.
+    Your images will be uploaded to TinyPNG, and the processed files and a report will be downloaded to a TinyPNG folder on your Desktop. Available services include compressing and resize (scale, fit cover, thumb).
 
-    - Triggered by File Action: `Image - Compress with TinyPNG`
-        1. Select the PNG or JPG files (in Finder or Alfred)
-        2. Press hotkey to trigger the File Action in Alfred.
-    - Triggered by Keyword
-        1. Select the PNG or JPG files you want processed in Finder, 
-        2. Launch Alfred, and then use the “tinypng" keyword.
+    - Triggered by File Action: 
+        1. Select the image files in Finder or Alfred
+        2. Press hotkey (default `⌘⌥\`) to trigger the File Action in Alfred.
+        3. Select File Actions:
+            - `Image - Compress with TinyPNG`
+            - `Image - Resize with TinyPNG`
+    - Triggered by Keyword: 
+        1. Select images files in Finder
+        
+        2. Launch Alfred, and use the following keywords.
+        
+            - `compress with tinypng`
+        
+            - `resize with tinypng`
 
 - Local processing
 
     - Triggered by File Action
-        - Image - Compress locally
-        - Image - Round Corner
-        - Image - Resize
-        - Image - Concact Horizontally
+        - `Image - Compress locally`
+        - `Image - Resize`
+        - `Image - Round Corner`
+        - `Image - Concact Horizontally`
 
     
 
 ## Dependencies
-
-- `tinify`: TinyPNG's API to compress and optimize JPEG and PNG images
-    - `pip install --upgrade tinify`
 
 - `pngquant`, `jpegoptim`, `figsicle` : Tools used for local image processing.
     - `brew install pngquant jpegoptim gifsicle`
@@ -46,78 +54,4 @@ Alfred Workflow which can take a set of PNG/JPG/gif files and compress them by u
 - The original version of this workflow is integrated and refactored from [TinyPNG](http://www.packal.org/workflow/tinypng) and [Alfred Gallery](https://github.com/BlackwinMin/alfred-gallery).
 
 - The workflow's icon is made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
