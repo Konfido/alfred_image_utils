@@ -35,4 +35,7 @@ for arg in sys.argv[1:]:
     except Exception as e:
         print(e)
 
-sys.stdout.write("All image compressed!")
+# sys.stdout.write("All image compressed!")
+os.system("""osascript -e 'tell application id "com.runningwithcrayons.Alfred" \
+    to run trigger "notify" in workflow "com.konfido.images-utils" \
+        with argument "All images compressed!"'""")
