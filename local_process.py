@@ -15,12 +15,16 @@ import sys
 my_env = os.environ.copy()
 my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
 
-for arg in sys.argv[1:]:
+def rename(src):
     file_dir = os.path.dirname(arg)
     file_id = datetime.datetime.now().strftime(format="%Y%m%d%H%M%S%f")[:-3]
     file_type = (os.path.splitext(arg)[-1]).lower()
     file_path = os.path.join(file_dir, file_id+file_type)
     os.rename(arg, file_path)
+    return file_path
+
+for arg in sys.argv[1:]:
+    file_path = rename(arg)
     try:
         if file_type == ".png":
             my_command = ["pngquant", file_path, "--quality",

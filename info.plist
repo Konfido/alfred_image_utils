@@ -77,6 +77,19 @@
 		</array>
 		<key>5B62B512-1946-4C25-A4C4-EF22B18A462B</key>
 		<array/>
+		<key>6A9E05E1-04CC-4A05-9C33-F7D9DECE872D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</key>
 		<array>
 			<dict>
@@ -270,44 +283,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>open https://tinypng.com/developers</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>public.svg-image</string>
+				</array>
+				<key>name</key>
+				<string>Image - Rename (Locally)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>4B9AF2B7-F9CE-4C76-ADE5-EC548E75CA94</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>tinypng_getkey</string>
-				<key>subtext</key>
-				<string>Visit TinyPNG.com to get your own personal API key</string>
-				<key>text</key>
-				<string>Get new API key</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>83D6833D-F243-477F-8E23-571A0EA5152D</string>
+			<string>6A9E05E1-04CC-4A05-9C33-F7D9DECE872D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -337,6 +325,57 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import subprocess as sp
+import os
+import json
+import shutil
+import datetime
+
+my_env = os.environ.copy()
+my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
+# Note: The first argument is the script's path
+name = datetime.datetime.now().strftime(format="%Y%m%d%H%M%S%f")[:-3]
+
+for arg in sys.argv[1:]:
+    fileType = (os.path.splitext(arg)[-1]).lower()
+    try:
+        if fileType == ".png":
+            my_command = ["pngquant", arg, "--quality", "70-95",
+                          "--ext=.png", "--force"]
+            sp.check_output(my_command, env=my_env)
+        elif fileType == ".jpg" or fileType == ".jpeg":
+            my_command = ["jpegoptim", "--max=90", arg]
+            sp.check_output(my_command, env=my_env)
+        elif fileType == ".gif":
+            my_command = ["gifsicle", "-i", arg, "--optimize=3", "-o", arg]
+            sp.check_output(my_command, env=my_env)
+    except Exception as e:
+        print(e)
+
+sys.stdout.write("All image compressed!")</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>local_process.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
 				<string>./tinypng_finder_selection.sh</string>
@@ -351,43 +390,6 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>4FF41EB6-B95A-41E5-9A20-235790EDC104</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>key="{query}"
-
-#Storage directory for API key
-PREFS="$alfred_workflow_data"
-
-#Create storage folder
-mkdir -p "$PREFS"
-
-#Save user's key to storage file
-echo "$key"&gt;"$PREFS/api_key"
-
-#Notify
-#echo "New API key applied:"$'\n'"$key"
-message="New API key applied:\n$key"
-osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow \"$alfred_workflow_bundleid\" with argument \"$message\""</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5B62B512-1946-4C25-A4C4-EF22B18A462B</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -415,84 +417,21 @@ osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow 
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
+				<key>acceptsmulti</key>
 				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>import sys
-import json
-
-try:
-	query = sys.argv[1]
-except:
-	query = ""
-
-out = {"items":[
-	{
-		"title": "Enter/Change API key",
-		"subtitle": "Paste your new API key into Alfred",
-		"arg": query
-	}]}
-
-
-sys.stdout.write(json.dumps(out))</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Paste your new API key into Alfred</string>
-				<key>title</key>
-				<string>Enter/Change API key</string>
-				<key>type</key>
-				<integer>3</integer>
-				<key>withspace</key>
-				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Compress (locally)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>8A056DDF-BEA5-415A-9245-E3260C6B7641</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>tinypng_config</string>
-				<key>subtext</key>
-				<string>Paste your new API key into Alfred</string>
-				<key>text</key>
-				<string>Enter/Change API key</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>005907E4-F528-43A1-9A88-DEE7534959B7</string>
+			<string>B66695FA-0605-488F-870A-9E90A282A232</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -519,19 +458,63 @@ sys.stdout.write(json.dumps(out))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
+				<key>acceptsmulti</key>
+				<true/>
+				<key>filetypes</key>
+				<array>
+					<string>com.compuserve.gif</string>
+					<string>public.jpeg</string>
+					<string>public.png</string>
+				</array>
+				<key>name</key>
+				<string>Image - Resize (locally)</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.trigger.action</string>
 			<key>uid</key>
-			<string>29250D2B-0704-4D7C-8964-4039EE435699</string>
+			<string>0013EAF5-26BC-4DBB-A2CC-A1223B81B55F</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>PATH=$PATH:/usr/local/bin/
+
+read -r -d '' applescriptCode1 &lt;&lt;'EOF'
+    set imgWidth to text returned of (display dialog "请输入图片宽度" default answer "900")
+    return imgWidth
+EOF
+
+imgWidth=$(osascript -e "$applescriptCode1")
+
+
+if [ -z $imgWidth ]
+then
+    osascript -e 'display notification with title "未指定分辨率" sound name "Pop"'
+else
+    for ARG in "$@"; do
+        convert -resize $imgWidth "$ARG" "$ARG"
+    done &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>resize.sh</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>53B5EB17-6D33-4A91-AD8D-A181A7ACA9C9</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -635,173 +618,6 @@ sys.stdout.write(json.dumps(out))</string>
 			<string>7737B40A-EA81-4768-AAA3-1876ABC72752</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>import sys
-import subprocess as sp
-import os
-import json
-import shutil
-import datetime
-
-my_env = os.environ.copy()
-my_env["PATH"] = "/usr/local/bin:" + my_env["PATH"]
-# Note: The first argument is the script's path
-name = datetime.datetime.now().strftime(format="%Y%m%d%H%M%S%f")[:-3]
-
-for arg in sys.argv[1:]:
-    fileType = (os.path.splitext(arg)[-1]).lower()
-    try:
-        if fileType == ".png":
-            my_command = ["pngquant", arg, "--quality", "70-95",
-                          "--ext=.png", "--force"]
-            sp.check_output(my_command, env=my_env)
-        elif fileType == ".jpg" or fileType == ".jpeg":
-            my_command = ["jpegoptim", "--max=90", arg]
-            sp.check_output(my_command, env=my_env)
-        elif fileType == ".gif":
-            my_command = ["gifsicle", "-i", arg, "--optimize=3", "-o", arg]
-            sp.check_output(my_command, env=my_env)
-    except Exception as e:
-        print(e)
-
-sys.stdout.write("All image compressed!")</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>local_process.py</string>
-				<key>type</key>
-				<integer>8</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<true/>
-				<key>filetypes</key>
-				<array>
-					<string>com.compuserve.gif</string>
-					<string>public.jpeg</string>
-					<string>public.png</string>
-				</array>
-				<key>name</key>
-				<string>Image - Compress (locally)</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>B66695FA-0605-488F-870A-9E90A282A232</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Image Utils</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>notify</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>acceptsmulti</key>
-				<true/>
-				<key>filetypes</key>
-				<array>
-					<string>com.compuserve.gif</string>
-					<string>public.jpeg</string>
-					<string>public.png</string>
-				</array>
-				<key>name</key>
-				<string>Image - Resize (locally)</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.action</string>
-			<key>uid</key>
-			<string>0013EAF5-26BC-4DBB-A2CC-A1223B81B55F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>PATH=$PATH:/usr/local/bin/
-
-read -r -d '' applescriptCode1 &lt;&lt;'EOF'
-    set imgWidth to text returned of (display dialog "请输入图片宽度" default answer "900")
-    return imgWidth
-EOF
-
-imgWidth=$(osascript -e "$applescriptCode1")
-
-
-if [ -z $imgWidth ]
-then
-    osascript -e 'display notification with title "未指定分辨率" sound name "Pop"'
-else
-    for ARG in "$@"; do
-        convert -resize $imgWidth "$ARG" "$ARG"
-    done &amp;&amp; afplay "/System/Library/Sounds/Submarine.aiff"
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>resize.sh</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>53B5EB17-6D33-4A91-AD8D-A181A7ACA9C9</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -923,6 +739,222 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Image Utils</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>notify</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open https://tinypng.com/developers</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4B9AF2B7-F9CE-4C76-ADE5-EC548E75CA94</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tinypng_getkey</string>
+				<key>subtext</key>
+				<string>Visit TinyPNG.com to get your own personal API key</string>
+				<key>text</key>
+				<string>Get new API key</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>83D6833D-F243-477F-8E23-571A0EA5152D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>key="{query}"
+
+#Storage directory for API key
+PREFS="$alfred_workflow_data"
+
+#Create storage folder
+mkdir -p "$PREFS"
+
+#Save user's key to storage file
+echo "$key"&gt;"$PREFS/api_key"
+
+#Notify
+#echo "New API key applied:"$'\n'"$key"
+message="New API key applied:\n$key"
+osascript -e "tell application \"Alfred\" to run trigger \"notify\" in workflow \"$alfred_workflow_bundleid\" with argument \"$message\""</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5B62B512-1946-4C25-A4C4-EF22B18A462B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>import sys
+import json
+
+try:
+	query = sys.argv[1]
+except:
+	query = ""
+
+out = {"items":[
+	{
+		"title": "Enter/Change API key",
+		"subtitle": "Paste your new API key into Alfred",
+		"arg": query
+	}]}
+
+
+sys.stdout.write(json.dumps(out))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Paste your new API key into Alfred</string>
+				<key>title</key>
+				<string>Enter/Change API key</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8A056DDF-BEA5-415A-9245-E3260C6B7641</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tinypng_config</string>
+				<key>subtext</key>
+				<string>Paste your new API key into Alfred</string>
+				<key>text</key>
+				<string>Enter/Change API key</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>005907E4-F528-43A1-9A88-DEE7534959B7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>29250D2B-0704-4D7C-8964-4039EE435699</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -933,23 +965,23 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>220</integer>
 		</dict>
 		<key>005907E4-F528-43A1-9A88-DEE7534959B7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>505</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>115</integer>
+			<integer>760</integer>
 		</dict>
 		<key>0C92559A-95FE-4D6D-95F0-8C0FFF4313DB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>900</integer>
 			<key>ypos</key>
-			<integer>680</integer>
+			<integer>360</integer>
 		</dict>
 		<key>11FB28B6-1ED2-401D-A297-104BC3522C95</key>
 		<dict>
@@ -961,25 +993,25 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>29250D2B-0704-4D7C-8964-4039EE435699</key>
 		<dict>
 			<key>xpos</key>
-			<integer>655</integer>
+			<integer>160</integer>
 			<key>ypos</key>
-			<integer>145</integer>
+			<integer>790</integer>
 		</dict>
 		<key>39637676-77DF-4712-AA73-07CB752A4A03</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>680</integer>
+			<integer>360</integer>
 		</dict>
 		<key>4B9AF2B7-F9CE-4C76-ADE5-EC548E75CA94</key>
 		<dict>
 			<key>xpos</key>
-			<integer>900</integer>
+			<integer>405</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>655</integer>
 		</dict>
 		<key>4FF41EB6-B95A-41E5-9A20-235790EDC104</key>
 		<dict>
@@ -991,32 +1023,41 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>53B5EB17-6D33-4A91-AD8D-A181A7ACA9C9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>900</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>220</integer>
 		</dict>
 		<key>551C40F9-63D4-4AA6-90A6-A1A7DCF32C83</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>785</integer>
+			<integer>465</integer>
 		</dict>
 		<key>5B62B512-1946-4C25-A4C4-EF22B18A462B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>900</integer>
+			<integer>405</integer>
 			<key>ypos</key>
-			<integer>115</integer>
+			<integer>760</integer>
+		</dict>
+		<key>6A9E05E1-04CC-4A05-9C33-F7D9DECE872D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<integer>610</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 		<key>71E57B26-ADA3-44DC-A9FA-E8F2DE67DC48</key>
 		<dict>
 			<key>xpos</key>
-			<integer>705</integer>
+			<integer>10</integer>
 			<key>ypos</key>
-			<integer>470</integer>
+			<integer>535</integer>
 		</dict>
 		<key>7737B40A-EA81-4768-AAA3-1876ABC72752</key>
 		<dict>
@@ -1028,9 +1069,9 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>83D6833D-F243-477F-8E23-571A0EA5152D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>505</integer>
-			<key>ypos</key>
 			<integer>10</integer>
+			<key>ypos</key>
+			<integer>655</integer>
 		</dict>
 		<key>840F2795-E3F2-4A43-8AA9-E4727147726D</key>
 		<dict>
@@ -1042,9 +1083,9 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>8A056DDF-BEA5-415A-9245-E3260C6B7641</key>
 		<dict>
 			<key>xpos</key>
-			<integer>725</integer>
+			<integer>230</integer>
 			<key>ypos</key>
-			<integer>115</integer>
+			<integer>760</integer>
 		</dict>
 		<key>A03CE2C3-01BC-43CD-9667-C39898352459</key>
 		<dict>
@@ -1056,18 +1097,18 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>B5D1049D-E953-4E68-BF86-D3BBE58CB4EF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>900</integer>
+			<integer>205</integer>
 			<key>ypos</key>
-			<integer>470</integer>
+			<integer>535</integer>
 		</dict>
 		<key>B66695FA-0605-488F-870A-9E90A282A232</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>7</integer>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>435</integer>
+			<integer>115</integer>
 		</dict>
 		<key>B7F2E874-8E01-4588-8DA6-48F6C181431E</key>
 		<dict>
@@ -1093,16 +1134,16 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		<key>DA54667A-E1DA-40FF-A4B4-F6C97BE11426</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>900</integer>
 			<key>ypos</key>
-			<integer>785</integer>
+			<integer>465</integer>
 		</dict>
 		<key>DE06CD18-20BE-4A22-8B91-FAFCE33CDB66</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>900</integer>
 			<key>ypos</key>
-			<integer>435</integer>
+			<integer>65</integer>
 		</dict>
 		<key>E6DB2371-DA7C-4EB9-80F5-1772EFAE63C8</key>
 		<dict>
@@ -1120,8 +1161,8 @@ convert "$@" -background none +append "$ooutput" &amp;&amp; afplay "/System/Libr
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.4.0</string>
+	<string>0.4.1</string>
 	<key>webaddress</key>
-	<string>konfido.github.com</string>
+	<string>https://github.com/Konfido/alfred_image_utils</string>
 </dict>
 </plist>

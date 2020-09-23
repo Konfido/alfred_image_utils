@@ -13,7 +13,7 @@ Notes:
 
 - Online processing
 
-    Your images will be uploaded to TinyPNG, and the processed files and a report will be downloaded to a TinyPNG folder on your Desktop. Available services include compressing and resize (scale, fit cover, thumb).
+    Your images will be uploaded to TinyPNG, and the processed files and a report will be downloaded to a TinyPNG folder on your Desktop. Available services include compressing and resize (scale, fit cover, thumb). Please check out [tinypny api](https://tinypng.com/developers/reference) for further info.
 
     - Triggered by File Action: 
         1. Select the image files in Finder or Alfred
@@ -33,11 +33,12 @@ Notes:
 - Local processing
 
     - Triggered by File Action
+        - `Image - Rename (locally)`: change images' name to the format of '%Y%m%d%H%M%S%f'
         - `Image - Compress locally`
         - `Image - Resize`
         - `Image - Round Corner`
-        - `Image - Concact Horizontally`
-
+    - `Image - Concact Horizontally`
+    
     
 
 ## Dependencies
