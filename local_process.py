@@ -21,10 +21,10 @@ def rename(src):
     file_type = (os.path.splitext(arg)[-1]).lower()
     file_path = os.path.join(file_dir, file_id+file_type)
     os.rename(arg, file_path)
-    return file_path
+    return file_type, file_path
 
 for arg in sys.argv[1:]:
-    file_path = rename(arg)
+    file_type, file_path = rename(arg)
     try:
         if file_type == ".png":
             my_command = ["pngquant", file_path, "--quality",
